@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	background-color: #000;
+	font-family: open sans;
+}
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 10px;
+}
+
+.logo{
+	width: 150px;
+	position: absolute;
+	top: 0;
+}
+.tekst12{
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 11px;
+	color: white;
+	margin-left: 12px;
+	margin-top: 70px;	
+	
+}
+
+.videonav{
+	margin-top: -50px;
+	display: flex;
+	margin-left: 1280px;
+
+}
+
+.videonav li{
+	list-style: none;
+}
+.videonav a{
+	text-decoration: none;
+	color: white;
+	text-transform: Uppercase;
+	letter-spacing: 5px;
+	font-size: 17px;
+}
+
+nav a:hover{
+	color:#CA1AB4;
+}
+
+h1{
+	font-size: 230px;
+	color: #111;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 30px;
+	margin-top: 30px;
+	
+}
+
+.teksttop{
+	position: fixed;
+	z-index: -1000;	
+	width: 1500px;
+	top: 0;
+	
+}
+
+.facebook {
+margin-left: 150px; 
+width: 50px;
+	
+}
+
+.instagram {
+	width: 50px;
+}
+
+
+#my_video {
+	margin-left: -250px;
+	width: 1000px;
+	height: 500px;
+}
+
+.gif{
+	width: 1000px;
+	margin-top: -650px;
+	margin-left: 160px;
+}
+
+.spotify{
+	width: 20%;
+	height: 100px;
+	margin-left: 430px;
+	margin-bottom: 500px;
+}
+
+.itunes {
+	width:17%;
+	height: 100px;
+	margin-left: 30px;
+	margin-bottom: 500px;
+}
+
+.baggrundfilm {
+position: fixed;
+z-index: -1000;
+width: 1500px;
+overflow: hidden;
+top: 0;
+left: 0;
+
+}
+ 
+
+
+#video_player_box{
+	width:550px; 
+	background:#000; 
+	margin:0px auto;
+}
+
+#video_controls_bar{ 
+	background: black; 
+	padding:10px; 
+	color:#CCC;
+}
+
+button#playpausebtn {
+	border: none;
+	width: 16px;
+	height: 18px;
+	cursor: pointer;	
+}
+
+input#seekslider{ 
+	width:180px; 
+}
+input#volumeslider{ 
+	width: 80px;
+}
+input[type='range'] {
+	-webkit-appearance: none !important;
+	background: #64f8ef;
+	height: 4px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+	background: white;
+	height: 10px;
+	width: 10px;
+	border-radius:100%;
+	cursor: pointer;
+	
+}
+
+.titel {
+	color: white;
+	font-size: 30px;
+	text-align:center;
+	margin-top: 50px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+.tekst {
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	margin-left: 300px;
+	margin-right: 300px;
+	line-height: 27px;
+	letter-spacing: 2px;
+	
+}
+
+@media only screen and (max-width: 768px) {
+	.logo{	
+	margin-left: 2px;
+}
+	.teksttop{	
+	width: 100%;
+	top: 60px;	
+}
+	
+	.videonav{
+	margin-top: -50px;
+	display: flex;
+	margin-left: 250px;
+
+}
+	#my_video {
+	margin-left: 2px;
+	width: 400px;
+	height: 200px;
+}
+
+	.titel {
+	font-size: 20px;
+}
+	
+.tekst {
+	font-size: 20px;
+	margin-left: 5px;
+	margin-right: 5px;	
+}
+	
+	.spotify{
+	width: 100px;
+	height: 50px;
+	margin-left: 60px;
+	margin-top: 5px;
+	margin-bottom: 200px;
+}
+	.itunes {
+	width: 100px;
+	height: 50px;
+	margin-left: 50px;
+	margin-top: 5px;
+	margin-bottom: 200px;
+}
+	
+	.gif{
+	width: 400px;
+	margin-left: -5px;
+}
+	.facebook {
+margin-left: 150px; 
+width: 50px;
+	
+}
+
+.instagram {
+	width: 50px;
+}
+	
+}
+	

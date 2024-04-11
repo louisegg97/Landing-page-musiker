@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+	<script src="script.js"></script>
+	
+	<img class="logo" alt="mw" src="mw1.png">
+	<p1> Maya Westman</p1>
+	<h1>
+	     <span>AMAZON</span>
+		 <span>WOMAN</span>
+	
+	</h1>
+	
+	<script>
+	
+	var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
+function intializePlayer(){
+	// Set object references
+	vid = document.getElementById("my_video");
+	playbtn = document.getElementById("playpausebtn");
+	seekslider = document.getElementById("seekslider");
+	curtimetext = document.getElementById("curtimetext");
+	durtimetext = document.getElementById("durtimetext");
+	mutebtn = document.getElementById("mutebtn");
+	volumeslider = document.getElementById("volumeslider");
+	fullscreenbtn = document.getElementById("fullscreenbtn");
+	// Add event listeners
+	playbtn.addEventListener("click",playPause,false);
+	seekslider.addEventListener("change",vidSeek,false);
+	vid.addEventListener("timeupdate",seektimeupdate,false);
+	mutebtn.addEventListener("click",vidmute,false);
+	volumeslider.addEventListener("change",setvolume,false);
+	fullscreenbtn.addEventListener("click",toggleFullScreen,false);
+}
+window.onload = intializePlayer;
+function playPause(){
+	if(vid.paused){
+		vid.play();
+		playbtn.innerHTML = "Pause";
+	} else {
+		vid.pause();
+		playbtn.innerHTML = "Play";
+	}
+}
+function vidSeek(){
+	var seekto = vid.duration * (seekslider.value / 100);
+	vid.currentTime = seekto;
+}
+function seektimeupdate(){
+	var nt = vid.currentTime * (100 / vid.duration);
+	seekslider.value = nt;
+	var curmins = Math.floor(vid.currentTime / 60);
+	var cursecs = Math.floor(vid.currentTime - curmins * 60);
+	var durmins = Math.floor(vid.duration / 60);
+	var dursecs = Math.floor(vid.duration - durmins * 60);
+	if(cursecs < 10){ cursecs = "0"+cursecs; }
+	if(dursecs < 10){ dursecs = "0"+dursecs; }
+	if(curmins < 10){ curmins = "0"+curmins; }
+	if(durmins < 10){ durmins = "0"+durmins; }
+	curtimetext.innerHTML = curmins+":"+cursecs;
+	durtimetext.innerHTML = durmins+":"+dursecs;
+}
+function vidmute(){
+	if(vid.muted){
+		vid.muted = false;
+		mutebtn.innerHTML = "Mute";
+	} else {
+		vid.muted = true;
+		mutebtn.innerHTML = "Unmute";
+	}
+}
+function setvolume(){
+	vid.volume = volumeslider.value / 100;
+}
+function toggleFullScreen(){
+	if(vid.requestFullScreen){
+		vid.requestFullScreen();
+	} else if(vid.webkitRequestFullScreen){
+		vid.webkitRequestFullScreen();
+	} else if(vid.mozRequestFullScreen){
+		vid.mozRequestFullScreen();
+	}
+}
+	
+	
+	</script>
+	
+<div id="video_player_box">
+  <video poster="poster.png" id="my_video" width="1000" height="500" autoplay>
+    <source src="mw.mp4">
+  </video>
+  <div id="video_controls_bar">
+    <button id="playpausebtn">Play</button>
+    <input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+    <span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span>
+    <button id="mutebtn">Mute</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+    <button id="fullscreenbtn">[ &nbsp; ]</button>
+  </div>
+</div>
+	
+	<h2 class="titel">ABOUT THE SONG</h2>
+	<p class="tekst">Strong and power is some of the basic values in Maya Westmans newest single. The nature sounds and drums combined with Maya Westmans incredible voice creates an uplifting harmony, that brings you through an unique musical journey. </p>
+	<section class="farve"></section>
+	<a href="https://open.spotify.com/artist/39I9Fo7J0LRTjbKki9CY6u"><img class="spotify" src="spotify2.png" alt="spotify"></a>
+	
+	<a href="https://itunes.apple.com/us/artist/maya-westman/1232315020"><img class="itunes" src="itunes2.png" alt="itunes"></a>
+	
+		<img class="mayatv" src="mayatv.png" alt="mayatv" width="600">
+	<img class="mayamidten" src="mayamidten.png" alt="mayamidten" width="600">
+	<img class="mayath" src="mayath.png" alt="mayath" width="600">
+	
+	<a href="https://www.facebook.com/maja.ahlgrenwestman"><img class="facebook" src="facebook.png" alt="facebook" width="50"></a>
+	
+	<a href="https://www.instagram.com/mayawestmanmusic/?hl=da"><img class="instagram" src="instagram.png" alt="instagram" width="50"></a>
+	
+	
+</body>
+</html>
